@@ -12,7 +12,15 @@ public class Board {
         this.height = height;
         initTiles();
     }
+    public Board(Board b) {
+        this.length = b.getLength();
+        this.height = b.getHeight();
+        this.tiles = new Vector<>();
+        for (int i = 0; i < length*height; i++) {
+            tiles.add(b.getTiles().get(i).Clone());
+        }
 
+    }
     protected void initTiles() {
         this.tiles = new Vector<>();
         for (int i = 0; i < length*height; i++) {

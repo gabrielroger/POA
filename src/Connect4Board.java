@@ -4,6 +4,9 @@ public class Connect4Board extends Board {
         super(length, height);
     }
 
+    Connect4Board(Connect4Board connect4Board)   {
+        super(connect4Board);
+    }
     public int getColumnHeight(int column) {
         if (column > 0 && column < length) {
             int i = 0;
