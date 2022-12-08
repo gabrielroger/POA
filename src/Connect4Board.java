@@ -10,7 +10,7 @@ public class Connect4Board extends Board {
             while (tiles.elementAt(column + i*length).piece != null) {
                 ++i;
             }
-            if (i > height) {
+            if (i >= height) {
                 return -1;
             }
             return i;
@@ -19,8 +19,8 @@ public class Connect4Board extends Board {
 
     boolean addPiece(int column, int team) {
         int columnHeight = getColumnHeight(column);
-        if (column > 0 && column < length && columnHeight != -1) {
-            tiles.elementAt(column + length *columnHeight+1).piece = new Piece(team);
+        if (column > 0 && column < length && columnHeight != -1 && columnHeight < height-1) {
+            tiles.elementAt(column + length*columnHeight+1).piece = new Piece(team);
             return true;
         } else return false;
     }

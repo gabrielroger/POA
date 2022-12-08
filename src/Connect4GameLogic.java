@@ -1,14 +1,13 @@
-public class Connect4GameManager {
+public class Connect4GameLogic {
 
     Connect4Board board;
 
-    public int turn;
+    Connect4GameLogic(Connect4Board board) {
+        this.board = board;
+    }
 
-    public boolean addPiece(int column) {
-        if (board.addPiece(column, turn%2)) {
-            ++turn;
-            return true;
-        } else return false;
+    public boolean testMoveWin(int column) {
+        return testTileWin(board.tiles.elementAt(column + board.length*board.getColumnHeight(column)));
     }
 
     public boolean testTileWin(Tile t) {
@@ -43,4 +42,5 @@ public class Connect4GameManager {
             return false;
         } else return false;
     }
+
 }
