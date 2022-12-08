@@ -1,6 +1,12 @@
 public class Connect4GameManager {
 
     Connect4Board board;
+    Connect4GameLogic logic;
+
+    Connect4GameManager(int boardLength, int boardHeight) {
+        this.board = new Connect4Board(boardLength, boardHeight);
+        this.logic = Connect4GameLogic.instance;
+    }
 
     public int turn;
 
@@ -11,36 +17,8 @@ public class Connect4GameManager {
         } else return false;
     }
 
-    public boolean testTileWin(Tile t) {
-        if (t.piece != null) {
-            int x = t.x;
-            int y = t.y;
-            int team = t.piece.team;
-            if (y <= board.height - 4 && board.getTile(x, y + 1).piece.team == team && board.getTile(x, y + 2).piece.team == team && board.getTile(x, y + 3).piece.team == team) {
-                return true;
-            }
-            if (x < board.length - 4 && y <= board.height - 4 && board.getTile(x + 1, y + 1).piece.team == team && board.getTile(x + 2, y + 2).piece.team == team && board.getTile(x + 3, y + 3).piece.team == team) {
-                return true;
-            }
-            if (x < board.length - 4 && board.getTile(x + 1, y).piece.team == team && board.getTile(x + 2, y).piece.team == team && board.getTile(x + 3, y).piece.team == team) {
-                return true;
-            }
-            if (x < board.length - 4 && y >= 3 && board.getTile(x + 1, y - 1).piece.team == team && board.getTile(x + 2, y - 2).piece.team == team && board.getTile(x + 3, y - 3).piece.team == team) {
-                return true;
-            }
-            if (y >= 3 && board.getTile(x, y - 1).piece.team == team && board.getTile(x, y - 2).piece.team == team && board.getTile(x, y - 3).piece.team == team) {
-                return true;
-            }
-            if (x >= 4 && y <= board.height - 4 && board.getTile(x - 1, y + 1).piece.team == team && board.getTile(x - 2, y + 2).piece.team == team && board.getTile(x - 3, y + 3).piece.team == team) {
-                return true;
-            }
-            if (x >= 4 && board.getTile(x - 1, y).piece.team == team && board.getTile(x - 2, y).piece.team == team && board.getTile(x - 3, y).piece.team == team) {
-                return true;
-            }
-            if (x >= 4 && y >= 3 && board.getTile(x - 1, y - 1).piece.team == team && board.getTile(x - 2, y - 2).piece.team == team && board.getTile(x - 3, y - 3).piece.team == team) {
-                return true;
-            }
-            return false;
-        } else return false;
+    public void run() {
+        //Initialize IA player
+
     }
 }

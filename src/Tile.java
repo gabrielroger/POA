@@ -1,6 +1,9 @@
 public class Tile {
-    public int x;
-    public int y;
+    protected int x;
+    protected int y;
 
-    public Piece piece;
+    protected Piece piece;
+
+    public int getX() {return x;}
+    public int getY() {return y;}
 }

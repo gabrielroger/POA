@@ -1,16 +1,12 @@
 public class Connect4GameLogic {
 
-    Connect4Board board;
+    public static Connect4GameLogic instance;
 
-    Connect4GameLogic(Connect4Board board) {
-        this.board = board;
+    public boolean testMoveWin(int column, Connect4Board board) {
+        return testTileWin(board.tiles.elementAt(column + board.length*board.getColumnHeight(column)), board);
     }
 
-    public boolean testMoveWin(int column) {
-        return testTileWin(board.tiles.elementAt(column + board.length*board.getColumnHeight(column)));
-    }
-
-    public boolean testTileWin(Tile t) {
+    public boolean testTileWin(Tile t, Connect4Board board) {
         if (t.piece != null) {
             int x = t.x;
             int y = t.y;

@@ -1,8 +1,10 @@
 public class Piece {
-    public int team;
+    protected int team;
 
     Piece(int team) {
         this.team = team;
     }
+
+    public int getTeam() {return team;}
 
 }

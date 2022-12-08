@@ -2,10 +2,10 @@ import java.util.Vector;
 
 public class Board {
 
-    public int length;
-    public int height;
+    protected int length;
+    protected int height;
 
-    public Vector<Tile> tiles;
+    protected Vector<Tile> tiles;
 
     public Board(int length, int height) {
         this.length = length;
@@ -18,4 +18,7 @@ public class Board {
             return tiles.elementAt(x + y*length);
         } else return null;
     }
+
+    public int getLength() {return length;}
+    public int getHeight() {return height;}
 }
