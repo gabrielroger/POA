@@ -17,6 +17,9 @@ public class Connect4GameManager {
 
     public void run() {
         //Initialize IA player
+        int winningTeam = -1;
+        while(winningTeam == -1) {
 
+        }
     }
 }

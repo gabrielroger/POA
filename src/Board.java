@@ -10,7 +10,15 @@ public class Board {
     public Board(int length, int height) {
         this.length = length;
         this.height = height;
-        this.tiles = new Vector<>(length*height);
+        initTiles();
+    }
+
+    protected void initTiles() {
+        this.tiles = new Vector<>();
+        for (int i = 0; i < length*height; i++) {
+            Tile t = new Tile(i%length, i/length);
+            tiles.add(t);
+        }
     }
 
     public Tile getTile(int x, int y) {
