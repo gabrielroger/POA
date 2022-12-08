@@ -26,7 +26,7 @@ public class Board {
             return tiles.elementAt(x + y*length);
         } else return null;
     }
-
+    public Vector<Tile> getTiles(){return tiles;}
     public int getLength() {return length;}
     public int getHeight() {return height;}
 }

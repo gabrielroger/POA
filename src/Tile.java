@@ -9,15 +9,15 @@ public class Tile {
         this.y = y;
     }
 
-    public Tile(int x, int y, Piece piece) {
+    public Tile(int x, int y, Piece p) {
         this.x = x;
         this.y = y;
-        this.piece = piece;
+        piece = p;
     }
 
     public int getX() {return x;}
     public int getY() {return y;}
-
+    public Piece getPiece(){return piece;}
     public Tile Clone() {
         return new Tile(x, y, piece);
     }

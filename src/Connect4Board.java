@@ -7,7 +7,7 @@ public class Connect4Board extends Board {
     public int getColumnHeight(int column) {
         if (column > 0 && column < length) {
             int i = 0;
-            while (tiles.elementAt(column + i*length).piece != null) {
+            while (tiles.elementAt(column + i*length).getPiece() != null) {
                 ++i;
             }
             if (i >= height) {
