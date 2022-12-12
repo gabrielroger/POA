@@ -20,10 +20,15 @@ public class State {
     }
 
     public int Utility() {
-        if(couleur==1)
-            return 1000;
-        if(couleur==0)
-            return -1000;
+
+        if(TerminalTest()) {
+            //victoire noire
+            if (couleur == 1)
+                return -1000;
+            //victoire blanc
+            else
+                return 1000;
+        }
         return 0;
     }
 
