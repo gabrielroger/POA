@@ -1,4 +1,4 @@
-public class Player {
+public abstract class Player {
     protected int team;
     protected Board playGround;
 

@@ -22,9 +22,11 @@ public class Connect4Board extends Board {
 
     boolean addPiece(int column, int team) {
         int columnHeight = getColumnHeight(column);
-        if (column > 0 && column < length && columnHeight != -1 && columnHeight < height-1) {
-            tiles.elementAt(column + length*columnHeight+1).piece = new Piece(team);
-            return true;
-        } else return false;
+        if (column > 0 && column < length) {
+            if (columnHeight != -1 && columnHeight < height-1) {
+                tiles.elementAt(column + length*columnHeight+1).piece = new Piece(team);
+                return true;
+            } else return false;
+        } else throw new IndexOutOfBoundsException();
     }
 }
