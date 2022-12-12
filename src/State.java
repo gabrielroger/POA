@@ -10,9 +10,10 @@ public class State {
     private ArrayList<State> successors=new ArrayList<>();
     private int couleur;
 
-    public State(Connect4Board board,int couleur) {
+    public State(Connect4Board board,int couleur,int move) {
         this.board=board;
         this.couleur=couleur;
+        this.move=move;
     }
 
     public boolean TerminalTest() {
@@ -54,7 +55,7 @@ public class State {
             if(board.getColumnHeight(j)!=-1) {
                 Connect4Board b= new Connect4Board(board);
                 b.addPiece(j, couleur);
-                State s= new State(b,Math.abs(couleur-1));
+                State s= new State(b,Math.abs(couleur-1),j);
                 successors.add(s);
             }
         }
