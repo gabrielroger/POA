@@ -1,4 +1,8 @@
 package Front;
+import Back.Connect4GameManager;
+
+import static Front.Grille.LARGEUR_GRILLE;
+import static Front.Grille.LONGUEUR_GRILLE;
 
 public class Partie {
 
@@ -7,6 +11,10 @@ public class Partie {
     private Joueur joueurA;
 
     private Joueur joueurB;
+
+    private Connect4GameManager gameManager;
+
+    private boolean partieFinie = false;
 
 
     private static Partie partie = null;
@@ -21,26 +29,27 @@ public class Partie {
         System.out.println(grille);
         this.joueurA = new JoueurInteractifClavier(new Rouge());
         joueurA.setNom("Alfred");
+        this.joueurB = new JoueurInteractifClavier(new Jaune());
+        joueurB.setNom("Roboto");
+        this.gameManager = new Connect4GameManager(LARGEUR_GRILLE, LONGUEUR_GRILLE);
     }
 
     public void jouer(){
 
-        boolean partieFinie = false;
-
         // Par défaut le joueur qui démarre est le joueur A
         Joueur joueurCourant = this.joueurA;
+        grille.deserializeGrille(gameManager.getSerializedBoard(), joueurA, joueurB);
+        System.out.println("Grille de départ : ");
+        System.out.println(grille);
+        System.out.println("\n");
 
         // Boucle principale
         while(!partieFinie){
-
-
-
             // Le joueur courant joue un tour
             this.unTour(joueurCourant);
         }
 
-        System.out.println("La partie est terminée : ");
-        System.out.println(grille);
+        System.out.println("La partie est terminée");
     }
 
     private void unTour(Joueur joueur){
@@ -50,30 +59,33 @@ public class Partie {
         // On cherche l'opposant du joueur
         Joueur opposant = ( (joueur == this.joueurA) ? this.joueurB : this.joueurA);
 
-        boolean coupJouerOk = true;
+        boolean coupJouerOk = false;
         // Tant que le joueur n'a pas joué correctement on boucle
-        do{
-            // Réinit du boolean
-            coupJouerOk = true;
-
-
+        do {
             // On récupère la colonne où jouer le jeton
             int numeroColonneOuJouer = joueur.placerJeton(grille.copie(), joueur, opposant);
 
-            System.out.println("Le joueur " + joueur.getNom() + " joue dans la colonne "+ numeroColonneOuJouer);
+            int result = gameManager.runTurn(numeroColonneOuJouer);
+            if (result == -1) {
+                System.out.println("Ce coup est invalide");
+            } else {
 
-            // Création du jeton
-            Jeton jeton = new Jeton(joueur.getCouleur());
+                System.out.println("Le joueur " + joueur.getNom() + " joue dans la colonne "+ numeroColonneOuJouer);
+                coupJouerOk = true;
 
-            // Placage du jeton
-            try {
-                this.grille.insereJeton(numeroColonneOuJouer, jeton);
-            } catch (Exception e) {
-                e.printStackTrace();
+                if (result == 1) {
+                    System.out.println("Vous avez gagné !");
+                    partieFinie = true;
+                }
+                if (result == 2) {
+                    System.out.println("Vous avez perdu.");
+                    partieFinie = true;
+                }
             }
 
         }while(!coupJouerOk);
 
+        grille.deserializeGrille(gameManager.getSerializedBoard(), joueurA, joueurB);
         System.out.println("Voici la grille résultante : ");
         System.out.println(grille);
         System.out.println("\n");

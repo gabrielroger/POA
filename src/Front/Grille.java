@@ -2,8 +2,8 @@ package Front;
 
 public class Grille implements Cloneable{
 
-    public static final int LARGEUR_GRILLE = 4;
-    public static final int LONGUEUR_GRILLE = 7;
+    public static final int LARGEUR_GRILLE = 8;
+    public static final int LONGUEUR_GRILLE = 8;
     protected Matrice<Case> matriceDeCases;
 
 
@@ -13,8 +13,8 @@ public class Grille implements Cloneable{
      */
     public Grille() {
         this.matriceDeCases = new Matrice<Case>(LARGEUR_GRILLE, LONGUEUR_GRILLE);
-        for(int i = 1; i<=LARGEUR_GRILLE; i++){
-            for(int j = 1 ; j <= LONGUEUR_GRILLE; j++){
+        for(int i = 0; i<LARGEUR_GRILLE; i++){
+            for(int j = 0 ; j < LONGUEUR_GRILLE; j++){
                 Case currentCase = new Case(null);
                 try {
                     this.matriceDeCases.affecteValeur(i, j, currentCase);
@@ -27,8 +27,8 @@ public class Grille implements Cloneable{
 
     public Grille copie()  {
         Grille copieDeLaGrille = new Grille();
-        for(int i = 1; i <= LARGEUR_GRILLE; i++){
-            for(int j = 1; j<= LONGUEUR_GRILLE; j++){
+        for(int i = 0; i < LARGEUR_GRILLE; i++){
+            for(int j = 0; j < LONGUEUR_GRILLE; j++){
                 try {
                     Jeton jeton = this.matriceDeCases.recupereValeur(i, j).getJeton();
                     if(jeton != null){
@@ -54,7 +54,7 @@ public class Grille implements Cloneable{
 
     private int plusHautJeton(int i){
         int indexPlusHaut = 0;
-        for(int j = LONGUEUR_GRILLE; j >= 1 && indexPlusHaut==0; j--){
+        for(int j = LONGUEUR_GRILLE-1; j >= 0 && indexPlusHaut==0; j--){
             if(this.matriceDeCases.recupereValeur(i, j).getJeton() != null){
                 indexPlusHaut = j;
             }
@@ -74,6 +74,27 @@ public class Grille implements Cloneable{
         int j = this.plusHautJeton(i) + 1;
         Case currentCase = this.matriceDeCases.recupereValeur(i, j);
         currentCase.setJeton(jeton);
+    }
 
+    public void deserializeGrille(int[][] board, Joueur joueurA, Joueur joueurB) {
+        for(int i = 0; i < LARGEUR_GRILLE; i++){
+            for(int j = 0 ; j < LONGUEUR_GRILLE; j++){
+                Case currentCase;
+                if (board[i][j] == 1){
+                    Jeton jeton = new Jeton(joueurA.getCouleur());
+                    currentCase = new Case(jeton);
+                } else if (board[i][j] == 0) {
+                    Jeton jeton = new Jeton(joueurB.getCouleur());
+                    currentCase = new Case(jeton);
+                } else {
+                    currentCase = new Case(null);
+                }
+                try {
+                    matriceDeCases.affecteValeur(i, j, currentCase);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

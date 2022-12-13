@@ -1,3 +1,5 @@
+package Back;
+
 public class HumanPlayer extends Player {
 
     public HumanPlayer(int team, Board board) {

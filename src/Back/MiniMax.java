@@ -1,3 +1,4 @@
+package Back;
 
 public class MiniMax {
     public static int MAX_DEPTH=4;

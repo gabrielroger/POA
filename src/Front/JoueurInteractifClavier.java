@@ -18,7 +18,7 @@ public class JoueurInteractifClavier extends Joueur {
         int i = sc.nextInt();
 
 
-        return i;
+        return i-1;
     }
 
 }

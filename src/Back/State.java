@@ -1,3 +1,4 @@
+package Back;
 
 import java.util.ArrayList;
 
@@ -52,7 +53,7 @@ public class State {
 
     public void setSuccessors() {
         for(int j=0;j<board.getLength();j++) {
-            if(board.getColumnHeight(j)!=-1) {
+            if(board.getColumnHeight(j)>0) {
                 Connect4Board b= new Connect4Board(board);
                 b.addPiece(j, couleur);
                 State s= new State(b,Math.abs(couleur-1),j);

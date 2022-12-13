@@ -1,3 +1,5 @@
+package Back;
+
 public class Piece {
     protected int team;
 

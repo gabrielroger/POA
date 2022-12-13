@@ -38,7 +38,7 @@ public class Matrice<A> {
 
     public void affecteValeur(int i, int j, A valeur) throws Exception {
 
-        if (i > this.largeur || i < 1 || j > this.longueur || j < 1) {
+        if (i >= this.largeur || i < 0 || j >= this.longueur || j < 0) {
             String message = "Les index de colonne et de ligne fournie ( i = " + i + ", j = " + j + " ) lors de la tentative d'affectation de la valeur " + valeur + " sont définies en dehors des limites de largeur et de longueur de la matrice.";
         }
 
@@ -48,7 +48,7 @@ public class Matrice<A> {
     }
 
     public A recupereValeur(int i, int j) throws NullPointerException {
-        if (i > this.largeur || i < 1 || j > this.longueur || j < 1) {
+        if (i >= this.largeur || i < 0 || j >= this.longueur || j < 0) {
             String message = "Les index de colonne et de ligne fournie ( i = " + i + ", j = " + j + " ) lors de la tentative de récupérer la valeur associée sont définies en dehors des limites de largeur et de longueur de la matrice.";
             throw new NullPointerException(message);
         }
@@ -63,8 +63,8 @@ public class Matrice<A> {
     private int tailleMaxElement(){
         int result = 0;
         try {
-            for(int i = 1; i <= this.largeur; i++){
-                for(int j = 1; j <= this.longueur; j++){
+            for(int i = 0; i < this.largeur; i++){
+                for(int j = 0; j < this.longueur; j++){
                     int tailleElement = 0;
                     A element = this.recupereValeur(i, j);
                     if(element == null){
@@ -126,9 +126,9 @@ public class Matrice<A> {
         int tailleMaxElement = this.tailleMaxElement();
         try {
 
-            for(int j = this.longueur ; j >=1 ; j--){
+            for(int j = this.longueur-1 ; j >=0 ; j--){
                 buffer.append("\n[ ");
-                for(int i = 1; i<= this.largeur; i ++ ){
+                for(int i = 0; i < this.largeur; i++ ){
                     buffer.append(" ");
                     A element = this.recupereValeur(i, j);
                     String textualElement = NULL;
