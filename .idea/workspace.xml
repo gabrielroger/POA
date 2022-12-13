@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561bd6fc-b254-49af-a9d2-a15ffb9dafc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Case.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Coordonnee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Coordonnee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Couleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Couleur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Grille.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Grille.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Jeton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Jeton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/JoueurInteractifClavier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/JoueurInteractifClavier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Matrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Matrice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Partie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Partie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POA/Front/Rouge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POA/Front/Rouge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Connect4Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Connect4Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Connect4GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Connect4GameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Connect4GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Connect4GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Front/Grille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front/Grille.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Front/JoueurInteractifClavier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front/JoueurInteractifClavier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Front/Matrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front/Matrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Front/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front/Partie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MiniMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/MiniMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Back/Connect4GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Back/Connect4GameLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +70,7 @@
       <updated>1670517048730</updated>
       <workItem from="1670517050354" duration="3378000" />
       <workItem from="1670864183692" duration="1805000" />
-      <workItem from="1670881782821" duration="10503000" />
+      <workItem from="1670881782821" duration="10838000" />
     </task>
     <task id="LOCAL-00001" summary="ajout minimax state pair">
       <created>1670519787407</created>
